@@ -34,5 +34,5 @@ console.log(
 );
 
 const lastNum = +prompt("Введіть число для визначення парності");
-const pairOrNo = lastNum % 2 ? true : false;
-console.log(`Вказане вами число не парне - ${pairOrNo}`);
+const pairOrNo = lastNum % 2 ? false : true;
+console.log(`Вказане вами число парне - ${pairOrNo}`);
