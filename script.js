@@ -1,11 +1,11 @@
 const sumFix = 0.1 + 0.2;
-console.log(`Result - ${sumFix.toFixed(1)}`);
+console.log(`Result - ${+sumFix.toFixed(1)}`);
 
 const login = prompt("Введіть логін");
 const password = prompt("Введіть пароль");
 
-const corectLogin = "admin";
-const corectPassword = "12pass33210";
+const correctLogin = "admin";
+const correctPassword = "12pass33210";
 
 if (login !== corectLogin && password !== corectPassword) {
   console.log("Відмовлено в авторизації");
@@ -35,12 +35,15 @@ if (userFunds >= Math.min(wmPrice, carrotPrice, potatoPrice)) {
     case "Кавун":
       itemsAmount = userFunds / wmPrice;
       fundsRest = userFunds % wmPrice;
+      break;
     case "Морква":
       itemsAmount = userFunds / carrotPrice;
       fundsRest = userFunds % carrotPrice;
+      break;
     case "Картопля":
       itemsAmount = userFunds / potatoPrice;
       fundsRest = userFunds % potatoPrice;
+      break;
     default:
       console.log("Обраний вами продукт відсутній в Асоритменті !");
   }
@@ -53,7 +56,7 @@ if (userFunds >= Math.min(wmPrice, carrotPrice, potatoPrice)) {
   } else {
     console.log(`В вас недостатньо коштів для покупки ${selectedItem}`);
   }
-} else if (userFunds == 0) {
+} else if (userFunds === 0) {
   console.log("В вас недостатньо коштів для покупки будь якого товару");
 } else {
   console.log("Коллектори вже виїхали за вами )))");
@@ -73,6 +76,6 @@ if (
 }
 
 // 2 && 0 && 3 || true && false = false
-// false || " " || 3 && true = false (0)
-// 1 && 1000 && '0' || 0 && 'Bob' = false(" ")
-// -1 || 0 || 0 && "" || 1010 = true (-1)
+// false || " " || 3 && true = " "
+// 1 && 1000 && '0' || 0 && 'Bob' = 0
+// -1 || 0 || 0 && "" || 1010 = -1
