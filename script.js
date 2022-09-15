@@ -27,33 +27,36 @@ console.log(`Асортимент :
 Картопля - ${potatoPrice} гривнень`);
 console.log(`Ваш баланс - ${userFunds} гривень`);
 
-const selectedItem = prompt("Оберіть продукт");
-console.log(`Обраний товар - ${selectedItem}`);
-
-const wmTotal = userFunds / wmPrice;
-const carrotTotal = userFunds / carrotPrice;
-const potatoTotal = userFunds / potatoPrice;
-
-if (selectedItem === "Кавун") {
-  console.log(
-    `Ви можете придбати ${Math.floor(wmTotal)} кавун . Ваша решта - ${
-      userFunds % wmPrice
-    } гривень`
-  );
-} else if (selectedItem === "Морква") {
-  console.log(
-    `Ви можете придбати ${Math.floor(carrotTotal)} морква . Ваша решта - ${
-      userFunds % carrotPrice
-    } гривень`
-  );
-} else if (selectedItem === "Картопля") {
-  console.log(
-    `Ви можете придбати ${Math.floor(potatoTotal)} кортопля . Ваша решта - ${
-      userFunds % potatoPrice
-    } гривень`
-  );
+if (userFunds >= Math.min(wmPrice, carrotPrice, potatoPrice)) {
+  const selectedItem = prompt("Оберіть продукт");
+  let itemsAmount = 0;
+  let fundsRest = 0;
+  switch (selectedItem) {
+    case "Кавун":
+      itemsAmount = userFunds / wmPrice;
+      fundsRest = userFunds % wmPrice;
+    case "Морква":
+      itemsAmount = userFunds / carrotPrice;
+      fundsRest = userFunds % carrotPrice;
+    case "Картопля":
+      itemsAmount = userFunds / potatoPrice;
+      fundsRest = userFunds % potatoPrice;
+    default:
+      console.log("Обраний вами продукт відсутній в Асоритменті !");
+  }
+  if (itemsAmount >= 1) {
+    console.log(
+      `Ви можете придбати ${Math.floor(
+        itemsAmount
+      )} ${selectedItem} . Ваша решта - ${fundsRest} гривень`
+    );
+  } else {
+    console.log(`В вас недостатньо коштів для покупки ${selectedItem}`);
+  }
+} else if (userFunds == 0) {
+  console.log("В вас недостатньо коштів для покупки будь якого товару");
 } else {
-  console.log("Обраний вами продукт відсутній в Асоритменті !");
+  console.log("Коллектори вже виїхали за вами )))");
 }
 
 const firstSide = +prompt("Вкажіть довжину першої сторони!");
