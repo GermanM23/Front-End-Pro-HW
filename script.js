@@ -121,3 +121,39 @@ newCalc.enterData();
 newCalc.calculateSum();
 newCalc.gcd();
 newCalc.nok();
+// Var2
+// function gcd(x, y) {
+// 	if (!y) {
+// 		return x;
+// 	}
+// 	return gcd(y, x % y);
+// }
+
+// function lcm(x, y) {
+// 	return x * y / gcd(x, y);
+// }
+
+// function Calculator() {
+// 	this.enterData = function () {
+// 		this.a = parseInt(prompt('Enter a'));
+// 		this.b = parseInt(prompt('Enter b'));
+// 	}
+
+// 	this.calculateSum = function () {
+// 		return this.a + this.b;
+// 	}
+
+// 	this.calculateNSD = function () {
+// 		return gcd(this.a, this.b);
+// 	}
+
+// 	this.calculateNSK = function () {
+// 		return lcm(this.a, this.b);
+// 	}
+// }
+
+// const calc = new Calculator();
+// calc.enterData();
+// console.log("Sum: " + calc.calculateSum());
+// console.log("NSD: " + calc.calculateNSD());
+// console.log("NSK: " + calc.calculateNSK());
