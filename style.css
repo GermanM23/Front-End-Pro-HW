@@ -7,6 +7,9 @@
   margin-right: auto;
   padding: 10px;
 }
+.roll-class :nth-child(even) {
+  background-color: aquamarine;
+}
 .roll-class > li {
   display: flex;
   align-items: center;
@@ -21,4 +24,10 @@ li > img {
 .calc-class {
   text-align: center;
   font-size: 16px;
+}
+.list.uncertified p:after {
+  font-size: 24px;
+  content: "!";
+  color: red;
+  margin-left: 10px;
 }

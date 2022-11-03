@@ -27,7 +27,7 @@ const productsList = [
     productName: "eggs",
     productData: {
       weight: 200,
-      certificate: true,
+      certificate: false,
       date0fExpiry: "26/10/2022",
       sugarFree: true,
     },
@@ -63,7 +63,7 @@ const productsList = [
     productName: "cherry",
     productData: {
       weight: 200,
-      certificate: true,
+      certificate: false,
       date0fExpiry: "21/11/2022",
       sugarFree: true,
     },
@@ -111,7 +111,7 @@ const productsList = [
     productName: "potato",
     productData: {
       weight: 200,
-      certificate: true,
+      certificate: false,
       date0fExpiry: "04/11/2022",
       sugarFree: true,
     },
@@ -135,7 +135,7 @@ const productsList = [
     productName: "Onion",
     productData: {
       weight: 400,
-      certificate: true,
+      certificate: false,
       date0fExpiry: "21/12/2022",
       sugarFree: true,
     },
@@ -193,6 +193,10 @@ function createProduct(productsList) {
   itemsList.appendChild(productInfo);
   itemsList.appendChild(productIMG);
   productsRoll.appendChild(itemsList);
+
+  if (!productsList.productData.certificate) {
+    itemsList.classList.add("uncertified");
+  }
 }
 productsList.forEach(createProduct);
 const htmlList = document.getElementById("product-card");
@@ -212,17 +216,17 @@ const highestPrice = productsList.reduce(maxPrice, 0);
 const averagePrice = total / productsList.length;
 
 const calculations = document.createElement("h2");
-const totalHTML = document.createElement("p");
-const maxHTML = document.createElement("p");
-const averageHTML = document.createElement("p");
+const totalProdPrice = document.createElement("p");
+const maxProdPrice = document.createElement("p");
+const averageProdPrice = document.createElement("p");
 
-totalHTML.innerText = `Total Ammount - ${total} UAH`;
-maxHTML.innerText = `Highest price product - ${highestPrice.productName}`;
-averageHTML.innerText = `Average price - ${+averagePrice.toFixed(2)} UAH`;
+totalProdPrice.innerText = `Total Amount - ${total} UAH`;
+maxProdPrice.innerText = `Highest price product - ${highestPrice.productName}`;
+averageProdPrice.innerText = `Average price - ${+averagePrice.toFixed(2)} UAH`;
 
-calculations.appendChild(totalHTML);
-calculations.appendChild(maxHTML);
-calculations.appendChild(averageHTML);
+calculations.appendChild(totalProdPrice);
+calculations.appendChild(maxProdPrice);
+calculations.appendChild(averageProdPrice);
 const div = document.getElementById("product-card");
 div.appendChild(calculations);
 // productsRoll.appendChild(calculations);
