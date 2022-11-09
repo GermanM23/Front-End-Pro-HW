@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Selector</title>
+	<script defer src="script.js"></script>
+</head>
+
+<body>
+	<form id="phone-form">
+		<select name="model">
+			<option disabled selected>Model</option>
+			<option value="iPhone 13">iPhone 13</option>
+			<option value="Samsung Galaxy A12">Samsung Galaxy A12</option>
+		</select>
+		<select name="ozu"></select>
+		<select name="memory"></select>
+		<button type="submit">Calculate</button>
+	</form>
+	<h3 id="result"></h3>
+	<h3 id="error" style="color: red"></h3>
+	<div>
+		<input id="secondsToBum" type="number" value="" />
+		<button id="start">start</button>
+		<p id="timer-result"></p>
+	</div>
+	<br>
+	<div>
+		<input type="date" id="date-input" />
+		<button id="campaign-button-start">Start campaign!</button>
+		<p id="campaign-result"></p>
+	</div>
+</body>
+
+</html>
