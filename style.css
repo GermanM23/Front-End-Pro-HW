@@ -1,0 +1,65 @@
+* {
+  background-color: #f8f8f8;
+}
+.container {
+  min-width: 100%;
+}
+.forecast-selctor {
+  display: flex;
+  padding: 10px;
+  background-color: inherit;
+  border-radius: 10px;
+  max-width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 2px solid #d0eaeb;
+}
+.input {
+  margin-right: 15px;
+  background-color: #d0eaeb;
+  color: #bd3c5d;
+  border-radius: 10px;
+  padding: 15px;
+  border: 2px solid #2b74c8;
+}
+.btn {
+  background-color: #d0eaeb;
+  color: #bd3c5d;
+  border-radius: 10px;
+  padding: 15px;
+  border: 2px solid #2b74c8;
+}
+.card-weather {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.day-item {
+  border: 2px solid #d0eaeb;
+  border-radius: 10px;
+  color: #2b74c8;
+  max-width: 15%;
+  padding: 20px 60px 20px 60px;
+  text-align: center;
+}
+.date-item {
+  border-bottom: 1px solid #d0eaeb;
+}
+.temp-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 28px;
+  font-weight: 600;
+}
+.max-temp {
+  border-right: 1px solid #d0eaeb;
+  padding-right: 10px;
+}
+.min-temp {
+  padding-left: 10px;
+}
